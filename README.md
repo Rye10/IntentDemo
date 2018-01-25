@@ -13,4 +13,5 @@ getStringExtra参数只需要key值，getIntExtra除了key值，还要defaultVal
 1、在onCreate之前获取数据Intent intent=getInent（）会报空指针错误，因为还没有识别到你的activity,在对应的方法中获取  </br>
 2、Unable to find explicit activity class    问题是在AndroidManifest.xml中没有定义新的activity的配置信息  </br>
 3、android.content.res.Resources$NotFoundException:String resource ID###</br>
-setText（）里边只能为string类型参数，如果为int类型就会报错
+setText（）里边只能为string类型参数，如果为int类型就会报错</br>
+解决方法  在int类型后边+""可以转换为string类型
