@@ -22,3 +22,30 @@ list.get(position).id为int型，+""转换为String类型</br>
 1、tv.setText(num+"");  </br>
 2、tv.setText(String.valueOf(num);</br>
 3、tv.setText(Integer.toString(num));</br>
+</br>
+</br>
+</br>
+使用bundle传递信息</br>
+1.fragment：</br>
+Bundle bundle=new Bundle();</br>
+bundle.putString("key","value");</br>
+Fragment fragment=new Fragment();</br>
+fragment.setArguments(bundle);</br>
+</br>
+Fragment中获取</br>
+Bundle bundle=getArguments();</br>
+String key=bundle.getString("key");</br>
+</br>
+2.intent:</br>
+Intent intent=new Intent(MainActivity.this,SecondActivity.class);</br>
+Bundle bundle=new Bundle();</br>
+bundle.putString("name","Tom");</br>
+bundle.putInt("age",21);</br>
+intent.putExtras(bundle);</br>
+startActivity(intent);</br>
+</br>
+SecondActivity中获取</br>
+Intent intent=getIntent();</br>
+Bundle bundle=intent.getExtras();</br>
+String name=bundle.getString("name");</br>
+int age=bundle.getInt("age");</br>
